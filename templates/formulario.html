@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" ><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" ><br><br>
+
+        <label for="profesion">Profesión:</label>
+        <input type="text" id="profesion" name="profesion" ><br><br>
+
+        <button type="submit" name="guardar">Guardar</button>
+    </form>
+
+    {% if mostrar_datos %}
+    <h2>Datos guardados:</h2>
+    <ul>
+        <li>Nombre: {{ datos['Nombre'] }}</li>
+        <li>Apellido: {{ datos['Apellido'] }}</li>
+        <li>Profesión: {{ datos['Profesion'] }}</li>
+    </ul>
+{% endif %}
+
+</body>
+</html>
